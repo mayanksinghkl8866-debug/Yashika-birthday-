@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Yashika ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#130813;color:white;font-family:Georgia;text-align:center}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:25px}
+.card{max-width:800px;padding:40px 25px;border-radius:30px;background:#ffffff10;box-shadow:0 20px 70px #000}
+h1{font-size:75px;color:#ff9dcc;margin:15px}
+h2{font-size:40px;color:#ffacd4}
+p{font-size:19px;line-height:1.7;color:#f8dce9}
+button{padding:15px 25px;border:0;border-radius:30px;background:#ff4f9a;color:white;font-weight:bold;font-size:16px;margin:10px;cursor:pointer}
+.heart{font-size:60px;animation:p 1.3s infinite}
+@keyframes p{50%{transform:scale(1.25)}}
+.hidden{display:none}
+.photo{display:inline-flex;width:150px;height:150px;margin:8px;border:1px dashed #ffffff66;border-radius:20px;align-items:center;justify-content:center;color:#aaa}
+</style>
+</head>
+
+<body>
+
+<section>
+<div class="card">
+<div class="heart">❤️</div>
+<p>A little surprise made specially for</p>
+<h1>Yashika</h1>
+<p>Someone made this little corner of the internet just for you.</p>
+<button onclick="next('letter')">Open your surprise 💌</button>
+</div>
+</section>
+
+<section id="letter">
+<div class="card">
+<h2>Hey Yashika ❤️</h2>
+<p>Happy Birthday to one of the most special people in my life.</p>
+<p>I hope this year brings you endless happiness, beautiful memories and everything you've wished for.</p>
+<p>I'm really lucky that our paths crossed and that I get to make memories with you.</p>
+<p>Every conversation, every laugh and every little moment with you means something to me.</p>
+<p><b>Today is your day. So smile a little extra. 😌❤️</b></p>
+<button onclick="next('story')">Our little story →</button>
+</div>
+</section>
+
+<section id="story">
+<div class="card">
+<p>CHAPTERS OF US</p>
+<h2>Our Story 🫶</h2>
+<p>🌸 The beginning — two people started talking.</p>
+<p>💬 Random conversations became something special.</p>
+<p>❤️ Somewhere along the way, we became "us".</p>
+<p>✨ And now we're still making memories together.</p>
+<button onclick="next('photos')">One more thing 📸</button>
+</div>
+</section>
+
+<section id="photos">
+<div class="card">
+<h2>For You 📸</h2>
+<p>Our photos will go here ❤️</p>
+<div class="photo">PHOTO 1</div>
+<div class="photo">PHOTO 2</div>
+<div class="photo">PHOTO 3</div>
+<br>
+<button onclick="surprise()">CLICK FOR THE FINAL SURPRISE 👀</button>
+
+<div id="final" class="hidden">
+<h2>Yashika ❤️</h2>
+<p>You are officially stuck with this idiot. 💀</p>
+<p><b>Happy Birthday! 🎂❤️</b></p>
+<p>May your smile stay exactly the way it is — beautiful.</p>
+</div>
+</div>
+</section>
+
+<script>
+function next(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+function surprise(){
+document.getElementById("final").classList.remove("hidden");
+for(let i=0;i<30;i++){
+let h=document.createElement("div");
+h.innerHTML="❤️";
+h.style.position="fixed";
+h.style.left=Math.random()*100+"%";
+h.style.top="-20px";
+h.style.fontSize="25px";
+h.style.zIndex="999";
+document.body.appendChild(h);
+let y=0;
+let t=setInterval(()=>{
+y+=5;
+h.style.top=y+"px";
+if(y>innerHeight){clearInterval(t);h.remove()}
+},20);
+}
+}
+</script>
+
+</body>
+</html>
